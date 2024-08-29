@@ -10,15 +10,14 @@ export default function AboutUS() {
                         <div className="grid gap-6 lg:grid-cols-[1fr_400px] lg:gap-12 xl:grid-cols-[1fr_600px]">
                             <div className="flex flex-col justify-center space-y-4">
                                 <div className="space-y-2">
-                                    <h1 className="text-3xl font-bold tracking-tighter sm:text-5xl xl:text-6xl/none">About Acme Inc</h1>
+                                    <h1 className="text-3xl font-bold tracking-tighter sm:text-5xl xl:text-6xl/none">About us</h1>
                                     <p className="max-w-[600px] text-muted-foreground md:text-xl">
-                                        Acme Inc is a leading provider of innovative web solutions. Our mission is to empower businesses of
-                                        all sizes to thrive online.
+                                        It seems like yesterday when our director had met the Rang Milan team Shikari Brothers in 1998. That was the time when the seeds of Abhivyakti Garba Mahotsav were sown 19 years back . First batch started with 340 students and training used to happen in Abhivyakti branch MP Nagar Bhopal with main event in Campion School. As the number of students kept on increasing old Campion ground became a small place to dance. During its 10th year, main Abhivyakti event used to happen in Subhash School with its theme as Abhivyakti apne bhavyatam swaroop me. Since then there is no end to the way this gala event is getting bigger every year.
                                     </p>
                                 </div>
                             </div>
                             <Image
-                                src="/placeholder.svg"
+                                src={"/image3.jpg"}
                                 width="550"
                                 height="550"
                                 alt="About Us"
@@ -31,10 +30,9 @@ export default function AboutUS() {
                     <div className="container px-4 md:px-6">
                         <div className="flex flex-col items-center justify-center space-y-4 text-center">
                             <div className="space-y-2">
-                                <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">Our Mission</h2>
+                                <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">Garba Mahotsav</h2>
                                 <p className="max-w-[900px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-                                    At Acme Inc, our mission is to empower businesses of all sizes to thrive online. We believe that every
-                                    organization deserves access to cutting-edge web technologies and world-class support.
+                                Today it is like through ‘Abhivyakti Garba Mahotsav’ Navratri dance festival has gone global. People from Bhopal, Indore and Jaipur wait for complete year for this festival. Abhivyakti Garba Mahotsav is a community in itself wherein people are connected since last 19 years and this community is increasing in size every year. Abhivyakti has seen young girls getting married becoming mothers and coming back to the same event with their children. Its actually overwhelming to see the kind of relatedness it has created in all the 3 centers Bhopal, Indore & Jaipur.
                                 </p>
                             </div>
                         </div>
@@ -46,8 +44,9 @@ export default function AboutUS() {
                             <div className="space-y-2">
                                 <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">Our Values</h2>
                                 <p className="max-w-[900px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-                                    Integrity, innovation, and customer-centricity are the core values that guide our every decision. We
-                                    are committed to delivering exceptional results while maintaining the highest ethical standards.
+                                From group’s perspective , there is an spiritual angle to the whole event. 
+                                This event is really close to the heart of the DB group. Money earned from Abhivyakti is used for charity reasons. Religious ceremony is personally done by Mrs Jyoti Agarwal daily including the prayers offered to  5 statues of Ganpati across the Abhivyakti ground. Passion and love involved in organising this show is the main reason behind its huge success. 
+                                It’s surprising but true that Abhivyakti Garba Mahotsav has same team of Decorators, Sound System, Tent, Stage Artist, DJ and trainers since last 19 years
                                 </p>
                             </div>
                         </div>
@@ -115,21 +114,3 @@ export default function AboutUS() {
     )
 }
 
-function MountainIcon(props: React.SVGAttributes<SVGSVGElement>) {
-    return (
-        <svg
-            {...props}
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="2"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-        >
-            <path d="m8 3 4 8 5-5 5 15H2L8 3z" />
-        </svg>
-    )
-}

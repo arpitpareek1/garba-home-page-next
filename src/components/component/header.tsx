@@ -8,7 +8,7 @@ import { Collapsible, CollapsibleTrigger, CollapsibleContent } from "@/component
 export default function Header() {
     return (
         <header className="flex h-16 w-full items-center justify-between bg-background px-4 md:px-6">
-            <Link href="#" className="flex items-center" prefetch={false}>
+            <Link href="/" className="flex items-center" prefetch={false}>
                 <MountainIcon className="h-6 w-6" />
                 <span className="sr-only">Acme Inc</span>
             </Link>
@@ -17,14 +17,14 @@ export default function Header() {
                     <NavigationMenuList>
                         <NavigationMenuLink asChild>
                             <Link
-                                href="#"
+                                href="/"
                                 className="group inline-flex h-9 w-max items-center justify-center rounded-md bg-background px-4 py-2 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50 data-[active]:bg-accent/50 data-[state=open]:bg-accent/50"
                                 prefetch={false}
                             >
                                 Home
                             </Link>
                         </NavigationMenuLink>
-                        <NavigationMenuItem>
+                        {/* <NavigationMenuItem>
                             <NavigationMenuTrigger>Features</NavigationMenuTrigger>
                             <NavigationMenuContent>
                                 <div className="grid w-[400px] p-2">
@@ -80,23 +80,23 @@ export default function Header() {
                                     </NavigationMenuLink>
                                 </div>
                             </NavigationMenuContent>
-                        </NavigationMenuItem>
+                        </NavigationMenuItem> */}
                         <NavigationMenuLink asChild>
                             <Link
-                                href="#"
+                                href="/gallery"
                                 className="group inline-flex h-9 w-max items-center justify-center rounded-md bg-background px-4 py-2 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50 data-[active]:bg-accent/50 data-[state=open]:bg-accent/50"
                                 prefetch={false}
                             >
-                                Pricing
+                                Gallery
                             </Link>
                         </NavigationMenuLink>
                         <NavigationMenuLink asChild>
                             <Link
-                                href="#"
+                                href="/about"
                                 className="group inline-flex h-9 w-max items-center justify-center rounded-md bg-background px-4 py-2 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50 data-[active]:bg-accent/50 data-[state=open]:bg-accent/50"
                                 prefetch={false}
                             >
-                                Contact
+                                About
                             </Link>
                         </NavigationMenuLink>
                     </NavigationMenuList>
@@ -111,10 +111,10 @@ export default function Header() {
                 </SheetTrigger>
                 <SheetContent side="left">
                     <div className="grid gap-2 py-6">
-                        <Link href="#" className="flex w-full items-center py-2 text-lg font-semibold" prefetch={false}>
+                        <Link href="/" className="flex w-full items-center py-2 text-lg font-semibold" prefetch={false}>
                             Home
                         </Link>
-                        <Collapsible className="grid gap-4">
+                        {/* <Collapsible className="grid gap-4">
                             <CollapsibleTrigger className="flex w-full items-center text-lg font-semibold [&[data-state=open]>svg]:rotate-90">
                                 Features <ChevronRightIcon className="ml-auto h-5 w-5 transition-all" />
                             </CollapsibleTrigger>
@@ -148,12 +148,12 @@ export default function Header() {
                                     </Link>
                                 </div>
                             </CollapsibleContent>
-                        </Collapsible>
-                        <Link href="#" className="flex w-full items-center py-2 text-lg font-semibold" prefetch={false}>
-                            Pricing
+                        </Collapsible> */}
+                        <Link href="/gallery" className="flex w-full items-center py-2 text-lg font-semibold" prefetch={false}>
+                            Gallery
                         </Link>
-                        <Link href="#" className="flex w-full items-center py-2 text-lg font-semibold" prefetch={false}>
-                            Contact
+                        <Link href="/about" className="flex w-full items-center py-2 text-lg font-semibold" prefetch={false}>
+                            About
                         </Link>
                     </div>
                 </SheetContent>

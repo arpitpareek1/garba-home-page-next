@@ -1,3 +1,4 @@
+"use client"
 import Image from "next/image";
 import Link from "next/link";
 
@@ -89,30 +90,31 @@ const Footer = () =>
             <div className="space-y-4">
                 <h3 className="text-lg font-bold">Quick Links</h3>
                 <div className="grid gap-2">
-                    <Link href="#" className="hover:underline" prefetch={false}>
+                    <Link href="/" className="hover:underline" prefetch={false}>
                         Home
                     </Link>
-                    <Link href="#" className="hover:underline" prefetch={false}>
+                    <Link href="/about" className="hover:underline" prefetch={false}>
                         About
                     </Link>
-                    <Link href="#" className="hover:underline" prefetch={false}>
+                    {/* <Link href="#" className="hover:underline" prefetch={false}>
                         Sponsors
-                    </Link>
-                    <Link href="#" className="hover:underline" prefetch={false}>
-                        Contact
+                    </Link> */}
+                    <Link href="/gallery" className="hover:underline" prefetch={false}>
+                        Gallery
                     </Link>
                 </div>
             </div>
             <div className="space-y-4">
                 <h3 className="text-lg font-bold">Find Us</h3>
                 <Image
-                    src="/placeholder.svg"
+                    src="/map.png"
                     width={600}
                     height={300}
                     alt="Map"
                     className="rounded-lg object-cover"
                     style={{ aspectRatio: "600/300", objectFit: "cover" }}
                 />
+                {/* <iframe src="https://www.google.com/maps/d/embed?mid=15xQaYCiOJJCRmz235cCU8QZO7Ztz3WU&ehbc=2E312F" width="340" height="2 80"></iframe> */}
             </div>
         </div>
     </footer>

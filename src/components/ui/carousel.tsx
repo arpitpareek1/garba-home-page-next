@@ -1,11 +1,8 @@
 "use client"
 
 import * as React from "react"
-import useEmblaCarousel, {
-  type UseEmblaCarouselType,
-} from "embla-carousel-react"
+import useEmblaCarousel, { type UseEmblaCarouselType } from "embla-carousel-react"
 import { ArrowLeft, ArrowRight } from "lucide-react"
-
 import { cn } from "@/lib/utils"
 import { Button } from "@/components/ui/button"
 
@@ -19,6 +16,8 @@ type CarouselProps = {
   plugins?: CarouselPlugin
   orientation?: "horizontal" | "vertical"
   setApi?: (api: CarouselApi) => void
+  autoScroll?: boolean // Add autoScroll prop
+  autoScrollInterval?: number // Add autoScrollInterval prop
 }
 
 type CarouselContextProps = {
@@ -54,6 +53,8 @@ const Carousel = React.forwardRef<
       plugins,
       className,
       children,
+      autoScroll = false,
+      autoScrollInterval = 3000, // Default to 3 seconds
       ...props
     },
     ref
@@ -120,6 +121,23 @@ const Carousel = React.forwardRef<
       }
     }, [api, onSelect])
 
+    // Auto-scroll logic
+    React.useEffect(() => {
+      if (!autoScroll || !api) return
+
+      const intervalId = setInterval(() => {
+        if(canScrollNext){
+          api.scrollNext()
+        } else {
+          api.scrollTo(0)
+        }
+      }, autoScrollInterval)
+
+      return () => {
+        clearInterval(intervalId)
+      }
+    }, [api, autoScroll, autoScrollInterval, canScrollNext])
+
     return (
       <CarouselContext.Provider
         value={{
@@ -132,6 +150,8 @@ const Carousel = React.forwardRef<
           scrollNext,
           canScrollPrev,
           canScrollNext,
+          autoScroll,
+          autoScrollInterval
         }}
       >
         <div
@@ -206,7 +226,7 @@ const CarouselPrevious = React.forwardRef<
       variant={variant}
       size={size}
       className={cn(
-        "absolute  h-8 w-8 rounded-full",
+        "absolute h-8 w-8 rounded-full",
         orientation === "horizontal"
           ? "-left-12 top-1/2 -translate-y-1/2"
           : "-top-12 left-1/2 -translate-x-1/2 rotate-90",
