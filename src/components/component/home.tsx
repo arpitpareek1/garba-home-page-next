@@ -1,32 +1,35 @@
-import Image from 'next/image'
+import Image from 'next/image';
+import { CarouselComp } from './carousel';
+import IntroModel from './intro-model';
 
-import { Carousel, CarouselContent, CarouselItem } from '@/components/ui/carousel'
-
-//https://v.ftcdn.net/06/10/85/34/240_F_610853419_y1iKORztC46AcfTjJPBVVs43nd3frRiI_ST.mp4 -> video url
 export default function HomePage() {
-  const images = ['image1', 'image2', 'image3', 'image4']
+  const images = ['img1', 'img3', 'img4'];
+
   return (
     <div className="relative flex flex-col min-h-screen overflow-hidden">
-      <main className="flex-1">
-        <section className="w-full">
-          <Carousel className="w-full" autoScroll autoScrollInterval={3000} >
-            <CarouselContent>
-              {images.map((altText) => (
-                <CarouselItem key={altText}>
-                  <Image
-                    src={"/" + altText + ".jpg"}
-                    width={1720}
-                    height={650}
-                    alt={altText}
-                    className="aspect-video object-cover"
-                  />
-                </CarouselItem>
-              ))}
-            </CarouselContent>
-            {/* <CarouselNext /> */}
-          </Carousel>
+      {/* Background Video */}
+      <div className="absolute inset-0 overflow-hidden">
+        <video
+          className="w-full h-full object-cover"
+          autoPlay
+          muted
+          loop
+        >
+          <source src="/into.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+        <div className="absolute inset-0 bg-black opacity-50"></div> {/* Optional overlay */}
+      </div>
+
+      <main className="relative flex-1 z-10">
+        <div className="bg-background rounded-lg shadow-lg max-w-md w-full relative animate-scale-up">
+          <IntroModel />
+        </div>
+        <section className="w-full bg-muted">
+          <CarouselComp />
         </section>
-        <section className="w-full py-12 md:py-24 lg:py-32 bg-muted">
+
+        <section className="w-full py-12 md:py-24 lg:py-32">
           <div className="container grid grid-cols-1 md:grid-cols-2 gap-8 px-4 md:px-6">
             <div className="space-y-4">
               <div className="inline-block rounded-lg bg-primary px-3 py-1 text-sm text-primary-foreground">
@@ -42,9 +45,9 @@ export default function HomePage() {
             <div className="grid grid-cols-2 gap-4">
               {images.map((altText) => (
                 <Image
-                  src={"/" + altText + ".jpg"}
+                  src={"/" + altText + ".jpeg"}
                   width={400}
-                  height={300}
+                  height={100}
                   alt={altText}
                   className="rounded-lg object-cover"
                   key={altText}
@@ -54,15 +57,6 @@ export default function HomePage() {
           </div>
         </section>
         <section className="w-full py-12 md:py-24 lg:py-32">
-          <video
-            className="absolute inset-0 object-cover w-full h-full -z-10"
-            autoPlay
-            muted
-            loop
-          >
-            <source src="https://v.ftcdn.net/06/10/85/34/240_F_610853419_y1iKORztC46AcfTjJPBVVs43nd3frRiI_ST.mp4" type="video/mp4" />
-            Your browser does not support the video tag.
-          </video>
           <div className="container grid grid-cols-1 md:grid-cols-2 gap-8 px-4 md:px-6">
             <div className="space-y-4">
               <div className="inline-block rounded-lg bg-primary px-3 py-1 text-sm text-primary-foreground">
@@ -78,7 +72,7 @@ export default function HomePage() {
             <div className="grid grid-cols-2 gap-4">
               {images.map((altText) => (
                 <Image
-                  src={"/" + altText + ".jpg"}
+                  src={"/" + altText + ".jpeg"}
                   width={400}
                   height={300}
                   alt={altText}
@@ -91,5 +85,5 @@ export default function HomePage() {
         </section>
       </main>
     </div>
-  )
+  );
 }

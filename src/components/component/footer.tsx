@@ -83,22 +83,21 @@ const Footer = () =>
                     </div>
                     <div className="flex items-center gap-2">
                         <LocateIcon className="h-5 w-5 text-muted-foreground" />
-                        <span>123 Main Street, Anytown USA</span>
+                        <span>31, Gam Kadva Patidar Samaj vadi,
+                            Nr. Sadhima Mandir, Gathaman road,
+                            Palanpur</span>
                     </div>
                 </div>
             </div>
             <div className="space-y-4">
                 <h3 className="text-lg font-bold">Quick Links</h3>
                 <div className="grid gap-2">
-                    <Link href="/" className="hover:underline" prefetch={false}>
+                    <Link href="/" className="hover:underline" prefetch={true}>
                         Home
                     </Link>
-                    <Link href="/about" className="hover:underline" prefetch={false}>
+                    <Link href="/about" className="hover:underline" prefetch={true}>
                         About
                     </Link>
-                    {/* <Link href="#" className="hover:underline" prefetch={false}>
-                        Sponsors
-                    </Link> */}
                     <Link href="/gallery" className="hover:underline" prefetch={false}>
                         Gallery
                     </Link>
@@ -106,14 +105,16 @@ const Footer = () =>
             </div>
             <div className="space-y-4">
                 <h3 className="text-lg font-bold">Find Us</h3>
-                <Image
-                    src="/map.png"
-                    width={600}
-                    height={300}
-                    alt="Map"
-                    className="rounded-lg object-cover"
-                    style={{ aspectRatio: "600/300", objectFit: "cover" }}
-                />
+                <Link href={"https://maps.app.goo.gl/zpQCKZ1k4TjLbRDU9"}>
+                    <Image
+                        src="/map.png"
+                        width={600}
+                        height={300}
+                        alt="Map"
+                        className="rounded-lg object-cover"
+                        style={{ aspectRatio: "600/300", objectFit: "cover" }}
+                    />
+                </Link>
                 {/* <iframe src="https://www.google.com/maps/d/embed?mid=15xQaYCiOJJCRmz235cCU8QZO7Ztz3WU&ehbc=2E312F" width="340" height="2 80"></iframe> */}
             </div>
         </div>
