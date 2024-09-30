@@ -8,7 +8,7 @@ import Image from "next/image"
 
 export default function Header() {
     return (
-        <header className="w-full bg-background py-4 shadow-sm">
+        <header className="w-full py-4 shadow-sm bg-[#c39143] p-4">
             <div className="container mx-auto flex items-center justify-between px-4 md:px-6">
                 <Link href="#" className="flex items-center justify-center" prefetch={false}>
                     <Image
@@ -20,13 +20,13 @@ export default function Header() {
                         style={{ aspectRatio: "142/105", objectFit: "cover" }}
                     />
                 </Link>
-                <nav className="hidden lg:flex">
+                <nav className="hidden lg:flex bg-[#c39143] p-4 text-[rgb(92 0 0)]">
                     <NavigationMenu>
                         <NavigationMenuList>
                             <NavigationMenuLink asChild>
                                 <Link
                                     href="/"
-                                    className="group inline-flex h-9 w-max items-center justify-center rounded-md bg-background px-4 py-2 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50 data-[active]:bg-accent/50 data-[state=open]:bg-accent/50"
+                                    className="group inline-flex h-9 w-max items-center justify-center rounded-md bg-[#c39143] px-4 py-2 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50 data-[active]:bg-accent/50 data-[state=open]:bg-accent/50"
                                     prefetch={false}
                                 >
                                     Home
@@ -35,7 +35,7 @@ export default function Header() {
                             <NavigationMenuLink asChild>
                                 <Link
                                     href="/gallery"
-                                    className="group inline-flex h-9 w-max items-center justify-center rounded-md bg-background px-4 py-2 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50 data-[active]:bg-accent/50 data-[state=open]:bg-accent/50"
+                                    className="group inline-flex h-9 w-max items-center justify-center rounded-md bg-[#c39143] px-4 py-2 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50 data-[active]:bg-accent/50 data-[state=open]:bg-accent/50"
                                     prefetch={false}
                                 >
                                     Gallery
@@ -44,7 +44,7 @@ export default function Header() {
                             <NavigationMenuLink asChild>
                                 <Link
                                     href="/about"
-                                    className="group inline-flex h-9 w-max items-center justify-center rounded-md bg-background px-4 py-2 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50 data-[active]:bg-accent/50 data-[state=open]:bg-accent/50"
+                                    className="group inline-flex h-9 w-max items-center justify-center rounded-md bg-[#c39143] p-4 px-4 py-2 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50 data-[active]:bg-accent/50 data-[state=open]:bg-accent/50"
                                     prefetch={false}
                                 >
                                     About

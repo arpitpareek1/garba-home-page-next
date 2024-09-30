@@ -67,3 +67,30 @@
     @apply bg-background text-foreground;
   }
 }
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@keyframes float {
+  0% { transform: translateY(0); }
+50% { transform: translateY(var(--float-distance, -250px)); }
+100% { transform: translateY(var(--float-distance, 0px));}
+}
+
+.animate-spin-slow {
+  animation: spin var(--spin-duration, 600s) linear infinite;
+}
+
+.animate-float {
+  animation: float var(--float-duration, 310s) ease-in-out infinite;
+}
+
+.background-svg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}

@@ -68,7 +68,7 @@ function PhoneIcon(props: React.SVGAttributes<SVGSVGElement>) {
 
 const Footer = () =>
 (
-    <footer className="bg-muted p-6 md:py-12 w-full">
+    <footer className="p-6 md:py-12 w-full bg-[#4c0000] py-12 text-[#d4af37]">
         <div className="container max-w-7xl grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             <div className="space-y-4">
                 <h3 className="text-lg font-bold">Contact Us</h3>
